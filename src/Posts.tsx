@@ -11,6 +11,7 @@ const Posts = (props: PostsProps) => {
   const [openPostIndex, setOpenPostIndex] = useState(-1);
 
   return <div>
+    <h2>Posts</h2>
     {
       posts.map((post, index) =>
         (openPostIndex === -1) ?

@@ -27,8 +27,8 @@ export function App() {
     {
       type: 'Image',
       author: 'Helen',
-      title: 'programming humor Reddit meme',
-      body: 'what is this meme? the comments are hilarious',
+      title: 'Can someone describe this Programming Humor Reddit meme?',
+      body: 'The comments are hilarious',
       fileURL: 'https://external-preview.redd.it/I5c5o0CfsObYYVwSgZaMvtfULdaJzLNOdJY-AJWMhio.jpg?auto=webp&s=72faf2456ea98753a15ed2938e233f6f1b05d323',
       altText: 'unknown Reddit meme',
       votes: 5,
@@ -39,7 +39,25 @@ export function App() {
           votes: 3
         }
       ]
-    }
+    },
+    {
+      type: 'Audio',
+      author: 'Helen',
+      title: 'What is the person saying?',
+      body: '',
+      fileURL: 'https://www.computerhope.com/jargon/m/example.mp3',
+      votes: 3,
+      comments: []
+    },
+    {
+      type: 'Video',
+      author: 'Helen',
+      title: 'Can I get a quick summary of this film?',
+      body: 'My friend made it for a project',
+      fileURL: 'https://youtu.be/-l8Ufaz4XSY',
+      votes: 3,
+      comments: []
+    },
   ]
   const [posts, setPosts] = useState<Post[]>(tempPosts);
 
@@ -50,6 +68,7 @@ export function App() {
   return <MuiThemeProvider theme={theme}>
     {
       <div>
+        <h1>Describe</h1>
         <CreatePost addPost={addPost} isOpen={creatingPost} close={() => { setCreatingPost(false) }}></CreatePost>
         <VideoTranscribe isOpen={transcribingVideo} close={() => setTranscribingVideo(false)}></VideoTranscribe>
         <AzureAnalysis isOpen={azureAnalyzing} close={() => setAzureAnalyzing(false)}></AzureAnalysis>

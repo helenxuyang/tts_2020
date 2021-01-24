@@ -64,13 +64,13 @@ const CreatePost = (props: CreatePostProps) => {
       type: type,
       title: title,
       body: body,
-      altText: 'unknown image',
+      fileURL: fileURL,
       author: 'Helen',
       comments: [],
       votes: 0
     };
-    if (fileURL) {
-      post.fileURL = fileURL;
+    if (type === 'Image') {
+      post.altText = "user submission"
     }
     addPost(post);
   }

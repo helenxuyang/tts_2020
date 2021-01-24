@@ -7,8 +7,8 @@ export type Post = {
   author: string,
   title: string,
   body: string,
-  fileURL?: string,
-  altText: string,
+  fileURL: string,
+  altText?: string,
   comments: Comment[],
   votes: number
 }

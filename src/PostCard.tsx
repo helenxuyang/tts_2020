@@ -3,6 +3,7 @@ import Card from '@material-ui/core/Card';
 import { CardContent, CardMedia } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import { Post } from './Post';
+import ReactPlayer from 'react-player';
 
 type PostCardProps = {
   post: Post,
@@ -16,15 +17,16 @@ const PostCard = (props: PostCardProps) => {
     <Card className="post-card" style={{ display: "flex", margin: 16, padding: 16 }}>
       <CardMedia>
         {post.type === "Image" &&
-          <img src={post.fileURL} alt={post.altText} width={200} height={200} ></img>}
+          <img src={post.fileURL} alt={post.altText} width={300} ></img>
+        }
         {post.type === "Audio" &&
-          <audio controls style={{ width: 200 }}>
+          <audio controls style={{ width: 300 }}>
             <source src={post.fileURL} />
-          </audio>}
+          </audio>
+        }
         {post.type === "Video" &&
-          <video controls width={200}>
-            <source src={post.fileURL} />
-          </video>}
+          <ReactPlayer url={post.fileURL} width={300} />
+        }
       </CardMedia>
       <CardContent>
         <h2>{`[${post.type}] ${post.title}`}</h2>
