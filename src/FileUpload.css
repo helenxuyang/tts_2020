@@ -1,0 +1,12 @@
+.dzu-input {
+  display: block;
+  padding-top: 16px;
+}
+
+.dzu-inputLabel {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
